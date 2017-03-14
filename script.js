@@ -88,7 +88,7 @@ window.onload = function(){
 	var coins = [];
 
 	initializare(mat,entitati,exit,start,enemy,context,level);
-
+	/*
 	document.getElementById("lvl").addEventListener('click',function(e){
 		if(level == 1){
 			reset(2);
@@ -108,7 +108,7 @@ window.onload = function(){
 			scor += 5;			
 		}
 	});
-
+*/
 	var char = {
 		walk : sprite({
 	    context: context,
