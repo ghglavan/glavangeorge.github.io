@@ -1,0 +1,14 @@
+#canv {
+	border: 1px solid black;
+	background-image: url("grass.png");
+}
+
+#col{
+	display: inline-block;
+	vertical-align: top;
+}
+
+@font-face {
+    font-family: 'Pixeled';
+    src: url("font/Pixeled.ttf");
+}
