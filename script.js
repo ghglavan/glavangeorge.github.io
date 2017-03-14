@@ -18,7 +18,7 @@ window.onload = function(){
 
 	var direction = 40;
 	
-	var level = 2;
+	var level = 1;
 
 	var entitati = [];
 	
@@ -89,7 +89,25 @@ window.onload = function(){
 
 	initializare(mat,entitati,exit,start,enemy,context,level);
 
-
+	document.getElementById("lvl").addEventListener('click',function(e){
+		if(level == 1){
+			reset(2);
+			document.getElementById("lvl").innerHTML = "level 1";
+		}else{
+			reset(1);
+			document.getElementById("lvl").innerHTML = "level 2";
+			
+		}
+	});
+	
+	document.getElementById("cheat").addEventListener('click',function(e){
+		for(var i = 0; i < enemy.length; i++){
+			enemy[i].dead = true;
+			enemy[i].stop = true;
+	    	enemy[i].stance = 3;
+			scor += 5;			
+		}
+	});
 
 	var char = {
 		walk : sprite({
@@ -212,7 +230,7 @@ window.onload = function(){
 			finished = false;
 			reset(1);
 		}
-	})
+	});
 
 
 
@@ -244,7 +262,7 @@ window.onload = function(){
 		}
 		
 
-		if(char.gstance().x / 40 > 19 && char.gstance().y / 40 == exit){
+		if(char.gstance().x / 40 > 19 && (char.gstance().y  <= exit*40 + 10 && char.gstance().y >= exit*40 - 10)){
 			reset(++level);
 		}
 
@@ -579,7 +597,7 @@ window.onload = function(){
 						s.img = spearl;
 						s.height = spearl.height;
 						s.width = spearl.width;
-						s.x = ehemy[i].gstance().x - 10;
+						s.x = ehemy[i].gstance().x ;
 						s.y = enemy[i].gstance().y;
 					}else if(direction == 38){
 						
@@ -587,18 +605,18 @@ window.onload = function(){
 						s.height = spearu.height;
 						s.width = spearu.width;
 						s.x = enemy[i].gstance().x;
-						s.y = enemy[i].gstance().y - 10;
+						s.y = enemy[i].gstance().y ;
 					}else if(direction == 39){
 						s.img = spearr;
 						s.height = spearr.height;
 						s.width = spearr.width;
-						s.x = enemy[i].gstance().x + 10;
+						s.x = enemy[i].gstance().x ;
 						s.y = enemy[i].gstance().y;
 					}else if(direction == 40){
 						s.img = speard;
 						s.height = speard.height;
 						s.width = speard.width;
-						s.x = enemy[i].gstance().x - 10;
+						s.x = enemy[i].gstance().x ;
 						s.y = enemy[i].gstance().y;
 					}
 					s.d = direction;
@@ -697,15 +715,29 @@ window.onload = function(){
     				x: spears[i].x,
     				y: spears[i].y,
     				width:25,
-    				height:40
-    			},char.gstance()) || intersection(char.gstance(),{
+    				height:25
+    			},{
+					x: char.gstance().x,
+					y: char.gstance().y,
+					width: 30,
+					height: 35
+				}) || intersection({
+					x: char.gstance().x,
+					y: char.gstance().y,
+					width: 30,
+					height: 35
+				},{
     				x: spears[i].x,
     				y: spears[i].y,
     				width:25,
-    				height:40
+    				height:25
     			}))){
+					console.log(spears[i].x + " " + spears[i].y);
 					char.dead = true;
 					char.stance = 3;
+					spears.splice(i,1);
+					
+					break;
 				}
 			
     		context.drawImage(spears[i].img,0,0,spears[i].width,spears[i].height,spears[i].x,spears[i].y,40,40);
