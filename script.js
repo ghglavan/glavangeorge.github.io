@@ -1,94 +1,112 @@
 
 
 window.onload = function(){
-
+	//get the canv
 	var c =  document.getElementById("canv");
-
+	//checks if the nemy fired
 	var enemyFired = false;
-	
+	//checks if the game is over
 	var finished = false;
-
+	//get the context from canvas
 	var context = c.getContext("2d");
-
+	//checks if the main character entered the danger zone
 	var entered = false;
-
+	//count the score based on enemies slained
 	var scor = 0;
-
+	//checks if sw is set
 	var set =  false;
-
+	//code for the direction the main caracter is moving
 	var direction = 40;
-	
+	//current level
 	var level = 1;
-
+	//a vector of walls and trees
 	var entitati = [];
-	
+	//the point of the matrix where the exit is situated
 	var exit = 9;
-
+	//the point of the start in the matrix 
 	var start = 9;
-
 	var down = 0;
-
+	//the matrix of the map
 	var mat = [];
-
+	//corrent gold
 	var gold = 0;
-
+	//checks if the main character has a key
 	var hasKey = false;
-
+	//checks if the main character is dead
 	var dead = false;
+	//speed of characters
 	var mov = 4;     
-
+	//vector of trees
 	var copaci = [];
 
+	//start to populate the vector of trees with the emages
 	for(var i = 1; i < 11; i++){
 		var copac = new Image();
 		copac.src = "copaci/copac"+i+".png";
 		copaci.push(copac);
 	}
 
+	//coin sprite
 	var coinImage = new Image();
 	coinImage.src = "coin.png";
 
+	//the vector of spears
 	var spears = [];
 
+	//the image of walls
 	var wall = new Image();
 	wall.src = "wall.png";
 
+	//the spear going to left
 	var spearl = new Image();
 	spearl.src = "spear1.png";
 	
+	//the image of the princes character
 	var printesa = new Image();
 	printesa.src = "p.png";
 
+	//the spear going up
 	var spearu = new Image();
 	spearu.src = "spearsus.png";
 
+	//the spear going down
 	var speard = new Image();
 	speard.src = "spearjos.png";
 
+	//the spear goind right
 	var spearr = new Image();
 	spearr.src = "speardreapta.png";
 
+	//the walking sprite of the main character
 	var charImageW = new Image();
 	charImageW.src = "mainch/walk.png";
 
+	//the attacking sprite of the main character
 	var charImageA = new Image();
 	charImageA.src = "mainch/attack.png";
 
+	//the dying sprite of the main character
 	var charImageD = new Image();
 	charImageD.src = "mainch/die.png";
 
+	//the image of the lvl1 key
 	var key = new Image();
 	key.src = "dkey.png";
 
+	//the image of the lvl2 key
 	var gkey = new Image();
 	gkey.src = "gk.png";
-		
+
+	//the vector of the enemy characters	
 	var enemy = [];
 
+	//the vector of coins
 	var coins = [];
 
+	//initialize everything with the starting,predefined values
 	initializare(mat,entitati,exit,start,enemy,context,level);
-	/*
+
+	//initialize the button to change the level
 	document.getElementById("lvl").addEventListener('click',function(e){
 		if(level == 1){
 			reset(2);
@@ -100,6 +118,7 @@ window.onload = function(){
 		}
 	});
 	
+	//initialize the button to kill every enemy in the current level
 	document.getElementById("cheat").addEventListener('click',function(e){
 		for(var i = 0; i < enemy.length; i++){
 			enemy[i].dead = true;
@@ -108,7 +127,8 @@ window.onload = function(){
 			scor += 5;			
 		}
 	});
-*/
+
+	//the main character sprite
 	var char = {
 		walk : sprite({
 	    context: context,
@@ -191,6 +211,8 @@ window.onload = function(){
 	});
 
 */
+
+	//the collision box for the main character
 	var legsBox = {
 			x: char.gstance().x +4,
 			y: char.gstance().y +4,
@@ -200,7 +222,7 @@ window.onload = function(){
 
 		var move = {};
 
-
+	//reset button behavior
 	var reset = function(nivel){
 		level = nivel;
 		spears = [];
@@ -221,6 +243,7 @@ window.onload = function(){
 		hasKey = false;
 	}	
 
+	//the reset button
 	c.addEventListener('click',function(e){
 		var poz = getMousePos(c,e);
 
@@ -233,7 +256,7 @@ window.onload = function(){
 	});
 
 
-
+	//the keydown behavior
 	window.addEventListener('keydown',function(e){
 		
 		if(char.dead == true || finished == true){
@@ -429,7 +452,7 @@ window.onload = function(){
 		context.fillText("Level: "+level, 630, 35);
 	}
 
-
+	//the main game loop
 	function gameLoop () {
 
 	  window.requestAnimationFrame(gameLoop);
