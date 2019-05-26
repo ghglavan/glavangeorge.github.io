@@ -1,184 +1,499 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Who I Am</title>
+  <title>STracker</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="icon" href="images/sm.ico">
+  <link rel="icon" href="images/logo.ico">
+  <link href="https://fonts.googleapis.com/css?family=Martel+Sans&display=swap" rel="stylesheet">
   <style>
-  body {
-      font: 20px Montserrat, sans-serif;
+    body {
+      font: Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-      background-color: #4286f4; /* Blue */
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .margin {
+      margin-bottom: 10%;
+    }
+
+    .bg-1 {
+      background-color: #4286f4;
+      /* Blue */
       color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
+    }
+
+    .bg-2 {
+      background-color: #474e5d;
+      /* Dark Blue */
       color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
+    }
+
+    .bg-3 {
+      background-color: #ffffff;
+      /* White */
       color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
+    }
+
+    .bg-4 {
+      background-color: #2f2f2f;
+      /* Black Gray */
       color: #fff;
-  }
-  .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-  }
-  .navbar {
-      padding-top: 15px;
-      padding-bottom: 15px;
+    }
+
+    .container-fluid {
+      padding-top: 10%;
+      padding-bottom: 10%;
+    }
+
+    .navbar {
+      position: fixed;
+      background-color: rgba(76, 108, 129, 0.39);
+      z-index: 500;
+      width: 100vw;
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-      color: #4286f4 !important;
-  }
-  .description{
-    height: 150px;
-    overflow: auto;
-  }
+      height: 11vh;
+      font-size: 1em;
+      letter-spacing: 0.4em;
+    }
 
+    .navbar-nav li a:hover {
+      color: #4286f4 !important;
+    }
+
+
+    #about {
+      padding-top: 15vh;
+      background-image: url("images/asd2.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      font-family: 'Martel Sans', sans-serif;
+      color: white;
+      min-height: 100vh;
+    }
+
+    #ceva_dubios {
+      min-height: 100vh;
+    }
+
+    #contact {
+      background-image: url("images/asd2.jpg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: white;
+    }
+
+    #i_hate_this_shit {
+      font-size: 10vw;
+      letter-spacing: 5vw;
+      margin-left: 4vw;
+    }
+
+    #stupid_design_Who_cares {
+      margin-top: 5%;
+    }
+
+    .typewriter h1 {
+      overflow: hidden;
+      color: chartreuse;
+      font-size: 4vw;
+      /* The typwriter cursor */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
+      margin: 0 auto;
+      /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .2em;
+      /* Adjust as needed */
+      animation:
+        typing 3.5s steps(40, end),
+        blink-caret .5s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 100%
+      }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent
+      }
+    }
+
+    #logo_text {
+      color: white
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
   </style>
 </head>
+
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
- 
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      
-      <p></p>
-      <p class="navbar-text"><a  href="#who"><img class = "img-circle " src="images/sm2.png" width="80px" height="80px"   alt="Me"></a> Glavan George <a href="https://github.com/glavangeorge" target = "blank"><img src="images/git.png"></a> <img src="images/in28.png"> </p>
-      
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <p id="logo_text" class="navbar-text"><a href="#"><img src="images/best_logo_white.png" width="10  %"
+              height="10%" alt="STracker"></a> STracker </p>
+
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-text navbar-right">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#ceva_dubios">IMAGES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-text navbar-right">
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#skills">SKILLS</a></li>
-        <li><a href="#projects">PROJECTS</a></li>
-      </ul>
+  </nav>
+
+  <!-- First Container -->
+  <div id="about" class="container-fluid bg-1 text-center">
+
+    <h1 id="i_hate_this_shit"> STracker </h1>
+
+    <div class="typewriter">
+      <h1>Measure software quality.</h1>
+    </div>
+
+    <div id="stupid_design_Who_cares">
+      <div class="col-md-3 mb-md-0 mb-5">
+        <img class="img-circle "
+          src="https://avatars2.githubusercontent.com/u/18744348?s=400&u=3e8b51932f9fc551ad5f024d4f1169db329cbdf1&v=4"
+          width="20%" height="20%" alt="Me">
+        <div class="row">
+          <p>Glavan George</p>
+        </div>
+        <div class="row">
+          <a href="https://github.com/glavangeorge" target="blank"><img src="images/git.png" width="9%" height="9%"></a>
+          <img src="images/in28.png" width="9%" height="9%">
+        </div>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-5">
+        <img class="img-circle " src="https://avatars0.githubusercontent.com/u/26044909?s=400&v=4" width="20%"
+          height="20%" alt="Me">
+        <div class="row">
+          <p>Enache Alexandru</p>
+        </div>
+        <div class="row">
+          <a href="https://github.com/msschh" target="blank"><img src="images/git.png" width="9%" height="9%"></a> <img
+            src="images/in28.png" width="9%" height="9%">
+        </div>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-5">
+        <img class="img-circle " src="https://avatars1.githubusercontent.com/u/26350297?s=400&v=4" width="20%"
+          height="20%" alt="Me">
+        <div class="row">
+          <p>Cir Contantin</p>
+        </div>
+        <div class="row">
+          <a href="https://github.com/CostiCTI" target="blank"><img src="images/git.png" width="9%" height="9%"></a>
+          <img src="images/in28.png" width="9%" height="9%">
+        </div>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-5">
+        <img class="img-circle " src="https://avatars0.githubusercontent.com/u/23056434?s=400&v=4" width="20%"
+          height="20%" alt="Me">
+        <div class="row">
+          <p>Radu Alexandru</p>
+        </div>
+        <div class="row">
+          <a href="https://github.com/alexi96" target="blank"><img src="images/git.png" width="9%" height="9%"></a>
+          <img src="images/in28.png" width="9%" height="9%">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Second Container -->
+  <div id="ceva_dubios" class="container-fluid bg-2 text-center">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images/ceva1.png" width="500vw" height="300vh">
+      </div>
+      <div class="col-md-6">
+        <img src="images/ceva2.png" width="500vw" height="300vh">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Tasks forecast based on historial values</p>
+      </div>
+      <div class="col-md-6">
+        <p>Effort forecast based on historial values</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src="images/ceva3.png" width="400vw" height="200vh">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p>Forecasting configuration</p>
+      </div>
     </div>
   </div>
-</nav>
 
-<!-- First Container -->
-<div id="about" class="container-fluid bg-1 text-center">
-  <h3 class="margin">The things I like:</h3>
-  <p>As programming languages, I like to make my projects using mainly C/C++ because of the low level programming and the freedom of manipulating memory provided by pointers. I choose Qt when it comes to cross-platform applications or anything that needs some graphic. Regarding the operating system, I prefer Linux. I like the work with the IPCs,
-    I like the community, the freedom that the programmer gets from this operating system and I also like Embedded Linux.
-    Even though C++ is my main language and I enjoy to work with Linux, I also like Java because of how easy it is to program complex applications, and Windows for the big variety of software.  
-  </p>
+  <!-- Third Container (Grid) -->
+  <div id="contact" class="container-fluid bg-3 text-center">
+    <!--Section: Contact v.2-->
+    <section class="mb-4">
 
-  <h3 class="margin">My hobbies:</h3>
+      <!--Section heading-->
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact
+        us
+        directly. Our team will come back to you within
+        a matter of hours to help you.</p>
 
-    <p>Regarding my hobbies, I must mention at least a few. Gaming (I'm quite competitive), running, playing football and embedded programming (I'm currently learning arduino, but I plan to make my own smart home in the near future).</p>
+      <div class="row">
 
+        <!--Grid column-->
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
-</div>
+            <!--Grid row-->
+            <div class="row">
 
-<!-- Second Container -->
-<div id="skills" class="container-fluid bg-2 text-center">
-  <h3 class="margin">Some technologies that I have experience with: </h3>
+              <!--Grid column-->
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="name" class="">Your name</label>
+                  <input type="text" id="name" name="name" class="form-control">
+                </div>
+              </div>
+              <!--Grid column-->
 
-  <p>C/C++, Java, Javascript, HTML, CSS, XML</p>
+              <!--Grid column-->
+              <div class="col-md-6">
+                <div class="md-form mb-0">
+                  <label for="email" class="">Your email</label>
+                  <input type="text" id="email" name="email" class="form-control">
+                </div>
+              </div>
+              <!--Grid column-->
 
-  <h3 class="margin">Some skills worth mentioning: </h3>
-  <p> OOP, OS, Algorithms, IPCs, Design Patterns, Qt </p>
+            </div>
+            <!--Grid row-->
 
-  <h3 class="margin">Some technologies that I've tried: </h3>
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="md-form mb-0">
+                  <label for="subject" class="">Subject</label>
+                  <input type="text" id="subject" name="subject" class="form-control">
+                </div>
+              </div>
+            </div>
+            <!--Grid row-->
 
-  <p>Python, SQL, Node.js, MongoDB, AngularJS</p>
-  
-  <h3 class="margin">Some skills that I'm currently building: </h3>
-  <p> UML, Embedded, Agile, Boost, MVC, Algorithms (you always work on algorithms)</p>
+            <!--Grid row-->
+            <div class="row">
 
-</div>
+              <!--Grid column-->
+              <div class="col-md-12">
 
-<!-- Third Container (Grid) -->
-<div id="projects" class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Some projects that I've worked on: </h3><br>
-  <div class="row">
-    <div class="col-sm-3">
-    	<h3> Visibility Polygon </h3>
-      <p class = "description">This is a project that I made with one of my colleagues. I learned how to work in a team, I found out how easy it is to build an application when working with others and listening to their ideas and I implemented some algorithms that are used in computational geometry like: line sweep algorithm for an O(nlogn) triangulation of y-monoton polygons and ear clipping algorithm. I also enjoyed making the GUI for this application using Qt. <a href = "https://github.com/glavangeorge/visibility-polygon" target = "blank">Here</a> is the github repository of the project</p>
-      <a href = "https://github.com/glavangeorge/visibility-polygon" target = "blank"><img src="images/gc.png" class="img-responsive margin img-thumbnail" style="width:100%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-    	<h3> Save the princess </h3>
-      <p class = "description">Here is a game that I made for a college project, using javascript to manipulate a HTML canvas. By building this game I renewed my old knowledge about Javascript and I practiced character movement using sprites. <a href="canvas game/game.html" target = "blank">Here</a> is a demo.</p>
-      <a href="canvas game/game.html"  target = "blank"><img src="images/cg2.png" class="img-responsive margin img-thumbnail" style="width:100%" alt="Image"></a>
-    </div>
-    <div class="col-sm-3"> 
-    	<h3> To-do list </h3>
-      <p class = "description">I built this application to strenghten my knowledge about C++ and Qt. It is a simple application that is based on the Qt calendat widget and has 3 functionalities as presented <a href="https://github.com/glavangeorge/To-do-list" target = "blank">here</a>.</p>
-      <a href="https://github.com/glavangeorge/To-do-list" target = "blank"><img src="images/todo.png" class="img-responsive margin img-thumbnail" style="width:100%" alt="Image"></a>
-    </div>
-    	<h3> Linux projects </h3>
-     <div class="col-sm-3"> 
-      <p class = "description">Here are some projects that helped me understand Linux. By building them, I gained a good understanding of the Linux file structure, IPC, pipes and fork. <a href="https://github.com/glavangeorge/SO">Here</a> are some important ones.</p>
-      <a href="https://github.com/glavangeorge/SO" target = "blank"><img src="images/linux.png" class="img-responsive margin img-thumbnail"  style="width:100%" alt="Image"></a>
-    </div>
+                <div class="md-form">
+                  <label for="message">Your message</label>
+                  <textarea type="text" id="message" name="message" rows="6"
+                    class="form-control md-textarea"></textarea>
+                </div>
+
+              </div>
+            </div>
+            <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+          </div>
+          <div class="status"></div>
+        </div>
+        <div class="col-md-3"></div>
+        <!--Grid column-->
+
+      </div>
+
+    </section>
+    <!--Section: Contact v.2-->
   </div>
-</div>
-
-<!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p><a href="https://github.com/glavangeorge" target = "blank"><img src="images/git64l.png" alt="git"> </a> <img src="images/in64.png" alt="git"></p> 
-
-</footer>
-
 </body>
 
 <script>
-$(document).ready(function(){
-  // Add scrollspy to <body>
-  $('body').scrollspy({target: ".navbar", offset: 50});   
+  $(document).ready(function () {
+    // Add scrollspy to <body>
+    $('body').scrollspy({ target: ".navbar", offset: 50 });
 
-  // Add smooth scrolling on all links inside the navbar
-  $("#myNavbar a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+    // Add smooth scrolling on all links inside the navbar
+    $("#myNavbar a").on('click', function (event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+        // Store hash
+        var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    }  // End if
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      }  // End if
+    });
+
+
   });
-});
 </script>
 
 
